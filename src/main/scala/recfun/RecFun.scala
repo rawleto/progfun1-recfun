@@ -18,9 +18,8 @@ object RecFun extends RecFunInterface :
 
     def pascalHelper(acc: Int, c: Int, r: Int): Int = {
       if c > r then throw new IllegalArgumentException("The column number cannot be bigger than row")
-      if c == 0 then 1
+      if c == 0 || c == r then 1
       else if c == -1 then 0
-      else if c == r then 1
       else pascalHelper(acc, c, r - 1) + pascalHelper(acc, c - 1, r - 1)
     }
 
